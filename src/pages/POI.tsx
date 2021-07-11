@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FormEvent } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FiClock, FiInfo } from 'react-icons/fi';
@@ -8,7 +8,6 @@ import '../styles/pages/poi.css';
 import Sidebar from '../components/Sidebar';
 import mapIcon from '../utils/mapIcon';
 import api from '../services/api';
-import { useHistory } from 'react-router-dom';
 
 interface POI {
   name: string;
@@ -33,8 +32,6 @@ export default function POI(): JSX.Element {
   const params = useParams<POIRouteParams>();
   const [poi, setPOI] = useState<POI>();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-
-  const history = useHistory();
 
   useEffect(() => {
     api.get(`/pointofinterest/${params.id}`).then(response => {
