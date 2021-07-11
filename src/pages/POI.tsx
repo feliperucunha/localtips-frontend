@@ -45,7 +45,7 @@ export default function POI(): JSX.Element {
 
   return (
     <div id="poi-page">
-      <Sidebar />
+      <Sidebar/>
 
       <main>
         <div className="poi-details">

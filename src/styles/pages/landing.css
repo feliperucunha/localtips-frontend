@@ -88,3 +88,29 @@
 .footer span {
   color: rgb(129, 129, 129);
 }
+
+@media (max-width: 767px) {
+  .content-wrapper {
+    height: 90% !important;
+  }
+
+  .content-wrapper main {
+    max-width: 240px !important;
+  }
+
+  .location {
+    padding: 20px !important;
+    width: 300px;
+  }
+
+  .enter-app {
+    margin-right: 20px;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 60px !important;
+  }
+}

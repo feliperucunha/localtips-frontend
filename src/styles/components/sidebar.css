@@ -41,3 +41,12 @@ aside.app-sidebar footer button:hover {
 img {
   cursor: pointer;
 }
+
+@media (max-width: 968px) {
+  .app-sidebar {
+    height: 80px !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    z-index: 2000;
+  }
+}

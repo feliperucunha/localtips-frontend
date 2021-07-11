@@ -186,3 +186,12 @@
   background: #36cf82;
 }
 
+@media (max-width: 768px) {
+  .poi-details {
+    max-width: 45vh !important;
+  }
+
+  .poi-details-content {
+    padding: 10px !important;
+  }
+}
