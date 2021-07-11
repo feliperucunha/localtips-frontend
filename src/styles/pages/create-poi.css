@@ -171,3 +171,9 @@ form.create-poi-form button.confirm-button svg {
 form.create-poi-form button.confirm-button:hover {
   background: #36CF82;
 }
+
+@media (max-width: 968px) {
+  .create-poi-form {
+    margin-top: 129px !important;
+  }
+}
