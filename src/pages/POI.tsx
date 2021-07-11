@@ -33,7 +33,6 @@ export default function POI(): JSX.Element {
   const params = useParams<POIRouteParams>();
   const [poi, setPOI] = useState<POI>();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [open_on_weekends, setOpenOnWeekends] = useState(true);
 
   const history = useHistory();
 
@@ -45,18 +44,6 @@ export default function POI(): JSX.Element {
 
   if (!poi) {
     return <p>Carregando...</p>;
-  }
-
-  async function handleSubmit(event: FormEvent) {
-    event.preventDefault();
-
-    const data = new FormData();
-
-    data.append('open_on_weekends', String(open_on_weekends));
-
-    await api.post(`/pointsofinterest/${params.id}`, data);
-
-    history.push('/app');
   }
 
   return (
