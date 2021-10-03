@@ -61,8 +61,9 @@ function POIMap(): JSX.Element {
             >
               <Popup
                 closeButton={false}
-                minWidth={240}
-                maxHeight={240}
+                minWidth={280}
+                maxHeight={260}
+                closeOnEscapeKey={true}
                 className="map-popup"
               >
                 {poi.name}
