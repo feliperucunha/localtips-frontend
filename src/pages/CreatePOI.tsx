@@ -70,7 +70,17 @@ export default function CreatePOI(): JSX.Element {
     });
 
     if (!name && !about && !longitude && !instructions && !opening_hours) {
-      alert('Preencha todos os campos');
+      alert('Preencha os campos');
+    } else if(!name) {
+      alert("Preencha o nome");
+    } else if(!about) {
+      alert("Preencha a descrição");
+    } else if(!instructions) {
+      alert("Preencha as instruções");
+    } else if(!opening_hours) {
+      alert("Preencha o horário");
+    } else if(!latitude) {
+      alert("Selecione o local no mapa");
     }
 
     await api.post('/pointofinterest', data);
