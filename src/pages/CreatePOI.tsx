@@ -117,7 +117,7 @@ export default function CreatePOI(): JSX.Element {
             </Map>
 
             <div className="input-block">
-              <label htmlFor="name">Nome</label>
+              <label htmlFor="name">Nome*</label>
               <input
                 id="name"
                 value={name}
@@ -127,7 +127,7 @@ export default function CreatePOI(): JSX.Element {
 
             <div className="input-block">
               <label htmlFor="about">
-                Sobre
+                Sobre*
                 <span>Máximo de 300 caracteres</span>
               </label>
               <textarea
@@ -164,7 +164,7 @@ export default function CreatePOI(): JSX.Element {
             <legend>Visitação</legend>
 
             <div className="input-block">
-              <label htmlFor="instructions">Instruções</label>
+              <label htmlFor="instructions">Instruções*</label>
               <textarea
                 id="instructions"
                 value={instructions}
@@ -173,7 +173,7 @@ export default function CreatePOI(): JSX.Element {
             </div>
 
             <div className="input-block">
-              <label htmlFor="opening_hours">Horário de funcionamento (ex: 09h - 15h)</label>
+              <label htmlFor="opening_hours">Horário de funcionamento* (ex: 09h - 15h)</label>
               <input
                 id="opening_hours"
                 value={opening_hours}
