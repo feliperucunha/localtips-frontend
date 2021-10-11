@@ -8,6 +8,7 @@ import '../styles/pages/poi.css';
 import Sidebar from '../components/Sidebar';
 import mapIcon from '../utils/mapIcon';
 import api from '../services/api';
+import LoadingPage from '../components/LoadingPage';
 
 interface POI {
   name: string;
@@ -40,7 +41,7 @@ export default function POI(): JSX.Element {
   }, [params.id]);
 
   if (!poi) {
-    return <p>Carregando...</p>;
+    return <LoadingPage />;
   }
 
   return (
