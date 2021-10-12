@@ -75,6 +75,15 @@
   width: 35%;
 }
 
+.Icons__Container {
+  display: flex;
+  align-items: center;
+}
+
+.Icons__Container .warning {
+  margin: 10px;
+}
+
 #page-map .map-popup .leaflet-popup-content {
   color: #0089a5;
   font-size: 20px;
