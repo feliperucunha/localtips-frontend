@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiPlus, FiArrowRight, FiAlertCircle } from 'react-icons/fi';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import CustomDialogContent from '../components/Modal';
+import { CustomDialog } from 'react-st-modal';
 
 import mapMarkerImg from '../images/logo.png';
 
@@ -75,9 +77,20 @@ function POIMap(): JSX.Element {
                   <Link to={`/pointsofinterest/${poi.id}`}>
                     <FiArrowRight size={20} color="#FFF" />
                   </Link>
-                  <FiAlertCircle className="warning" onClick={handleReport} size={20} color="red" />
+                  <FiAlertCircle
+                    className="warning"
+                    size={20}
+                    color="red"
+                    onClick={async () => {
+                      const result = await CustomDialog(<CustomDialogContent />, {
+                        title: 'Você deseja denunciar esse ponto de interesse? Insira o motivo e nossa equipe analisará se é cabível ou não',
+                        showCloseIcon: true,
+                      });
+                    }}
+                  />
                 </div>
               </Popup>
+
             </Marker>
           );
         })}
