@@ -78,6 +78,7 @@
 .Icons__Container {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .Icons__Container .warning {
