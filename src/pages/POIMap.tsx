@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiPlus, FiArrowRight } from 'react-icons/fi';
+import { FiPlus, FiArrowRight, FiAlertCircle } from 'react-icons/fi';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 import mapMarkerImg from '../images/logo.png';
@@ -24,6 +24,10 @@ function POIMap(): JSX.Element {
       setPOIs(response.data);
     });
   }, []);
+
+  const handleReport = () => {
+    alert('oi');
+  }
 
   return (
     <div id="page-map">
@@ -67,9 +71,12 @@ function POIMap(): JSX.Element {
                 className="map-popup"
               >
                 {poi.name}
-                <Link to={`/pointsofinterest/${poi.id}`}>
-                  <FiArrowRight size={20} color="#FFF" />
-                </Link>
+                <div className="Icons__Container">
+                  <Link to={`/pointsofinterest/${poi.id}`}>
+                    <FiArrowRight size={20} color="#FFF" />
+                  </Link>
+                  <FiAlertCircle className="warning" onClick={handleReport} size={20} color="red" />
+                </div>
               </Popup>
             </Marker>
           );
